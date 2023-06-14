@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.4 on win32)" generated="20230614 15:34:35.263" rpa="false" schemaversion="3">
+<suite id="s1" name="API requests" source="c:\Users\Formation\Desktop\projetGITRFW\Mercredi 14-06-23\API requests.robot">
+<test id="s1-t1" name="Supprimer avec la requete DELETE" line="64">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>ma_session_delete</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230614 15:34:35.500" level="INFO">Creating Session using : alias=ma_session_delete, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230614 15:34:35.499" endtime="20230614 15:34:35.504"/>
+</kw>
+<kw name="DELETE" library="RequestsLibrary">
+<var>${response}</var>
+<arg>ma_session_delete</arg>
+<arg>${url}/posts/97</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20230614 15:34:35.509" level="FAIL">MissingSchema: Invalid URL 'ma_session_delete': No scheme supplied. Perhaps you meant https://ma_session_delete?</msg>
+<status status="FAIL" starttime="20230614 15:34:35.505" endtime="20230614 15:34:35.572"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230614 15:34:35.573" endtime="20230614 15:34:35.573"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230614 15:34:35.574" endtime="20230614 15:34:35.574"/>
+</kw>
+<status status="FAIL" starttime="20230614 15:34:35.498" endtime="20230614 15:34:35.574">MissingSchema: Invalid URL 'ma_session_delete': No scheme supplied. Perhaps you meant https://ma_session_delete?</status>
+</test>
+<status status="FAIL" starttime="20230614 15:34:35.270" endtime="20230614 15:34:35.576"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="API requests">API requests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

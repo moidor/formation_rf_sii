@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.4 on win32)" generated="20230613 16:24:54.629" rpa="false" schemaversion="3">
+<suite id="s1" name="eBay" source="c:\Users\Formation\Desktop\projetGITRFW\eBay\eBay.robot">
+<test id="s1-t1" name="Accéder à ebay.fr" line="21">
+<kw name="Ouvrir navigateur pour accéder à ebay.fr">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.ebay.fr/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230613 16:24:55.386" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.fr/'.</msg>
+<status status="PASS" starttime="20230613 16:24:55.384" endtime="20230613 16:25:00.298"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230613 16:25:00.300" endtime="20230613 16:25:00.423"/>
+</kw>
+<status status="PASS" starttime="20230613 16:24:55.382" endtime="20230613 16:25:00.424"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230613 16:25:03.426" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230613 16:25:00.425" endtime="20230613 16:25:03.426"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${refus des cookies}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230613 16:25:03.430" level="INFO">Clicking button '//*[@id="gdpr-banner-decline"]'.</msg>
+<status status="PASS" starttime="20230613 16:25:03.428" endtime="20230613 16:25:03.542"/>
+</kw>
+<kw name="Rechercher un iphone 14 Pro Max">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${barre de recherche}</arg>
+<arg>iPhone 14 Pro Max</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230613 16:25:03.547" level="INFO">Typing text 'iPhone 14 Pro Max' into text field '//*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20230613 16:25:03.545" endtime="20230613 16:25:03.690"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="gh-btn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230613 16:25:03.692" level="INFO">Clicking button '//*[@id="gh-btn"]'.</msg>
+<status status="PASS" starttime="20230613 16:25:03.691" endtime="20230613 16:25:08.081"/>
+</kw>
+<status status="PASS" starttime="20230613 16:25:03.544" endtime="20230613 16:25:08.082"/>
+</kw>
+<kw name="Recuperer la liste des produits trouves">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{ListElements}</var>
+<arg>//*[@id="srp-river-results"]/ul/li</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230613 16:25:08.116" level="INFO">@{ListElements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_201")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
+<status status="PASS" starttime="20230613 16:25:08.085" endtime="20230613 16:25:08.117"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{liste des 3 premiers}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230613 16:25:08.118" level="INFO">@{liste des 3 premiers} = [ ]</msg>
+<status status="PASS" starttime="20230613 16:25:08.117" endtime="20230613 16:25:08.119"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>${ListElements}</value>
+<iter>
+<var name="${element}">[&lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_201")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230613 16:25:08.125" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_201")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_202")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_167")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_178")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_188")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_203")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_204")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_205")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_206")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_207")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_208")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_209")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_210")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_211")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_212")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_213")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_214")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_215")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_216")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_217")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_218")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_219")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_220")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_221")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_222")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_223")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_224")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_225")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_226")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_227")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_228")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_229")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_230")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_231")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_232")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_233")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_234")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_235")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_236")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_237")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_238")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_239")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_240")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_241")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_242")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_243")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_244")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_245")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_246")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_247")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_248")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_249")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_250")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_251")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_252")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_253")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_254")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_255")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_256")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_257")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_258")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_259")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_260")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_261")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e081fa9c403e3be26ac15b4bb32a263", element="55C4504DBA73DDBB73B86E474B63906F_element_262")&gt;]</msg>
+<status status="PASS" starttime="20230613 16:25:08.122" endtime="20230613 16:25:08.127"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texte element}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230613 16:25:08.157" level="INFO">${texte element} = Pagination des résultats - Page 1
+1
+2
+Objets par page
+60</msg>
+<status status="PASS" starttime="20230613 16:25:08.129" endtime="20230613 16:25:08.157"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${texte element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230613 16:25:08.159" level="INFO">Pagination des résultats - Page 1
+1
+2
+Objets par page
+60</msg>
+<status status="PASS" starttime="20230613 16:25:08.158" endtime="20230613 16:25:08.159"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'EUR' in '${element}'</arg>
+<arg>Run Keyword</arg>
+<arg>Append To List</arg>
+<arg>${liste des 3 premiers}</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230613 16:25:08.160" endtime="20230613 16:25:15.366"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${longueur liste}</var>
+<arg>${liste des 3 premiers}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230613 16:25:37.318" level="INFO">Length is 0</msg>
+<msg timestamp="20230613 16:25:37.318" level="INFO">${longueur liste} = 0</msg>
+<status status="PASS" starttime="20230613 16:25:15.367" endtime="20230613 16:25:37.319"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${longueur liste}==3</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230613 16:25:37.319" endtime="20230613 16:25:49.846"/>
+</kw>
+<status status="PASS" starttime="20230613 16:25:08.120" endtime="20230613 16:25:49.847"/>
+</iter>
+<status status="PASS" starttime="20230613 16:25:08.119" endtime="20230613 16:25:49.848"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${liste des 3 premiers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230613 16:25:51.126" level="INFO">[]</msg>
+<status status="PASS" starttime="20230613 16:25:49.848" endtime="20230613 16:25:51.126"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{liste des 3 premiers}</value>
+<iter>
+<var name="${element}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230613 16:25:51.958" endtime="20230613 16:25:51.959"/>
+</kw>
+<status status="NOT RUN" starttime="20230613 16:25:51.957" endtime="20230613 16:25:51.959"/>
+</iter>
+<status status="NOT RUN" starttime="20230613 16:25:51.127" endtime="20230613 16:25:51.960"/>
+</for>
+<status status="PASS" starttime="20230613 16:25:08.083" endtime="20230613 16:25:51.960"/>
+</kw>
+<doc>Après la connexion au site ebay.fr, refus des cookies</doc>
+<status status="PASS" starttime="20230613 16:24:55.378" endtime="20230613 16:25:51.962"/>
+</test>
+<doc>Accéder à eBay
+Rechercher "iPhone 14 pro max"
+Récupérer les 3 premiers résultats
+Sélectionner le moins cher
+Vérifier le panier</doc>
+<status status="PASS" starttime="20230613 16:24:54.647" endtime="20230613 16:25:51.967"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="eBay">eBay</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

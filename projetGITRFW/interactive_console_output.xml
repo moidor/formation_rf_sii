@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.4 on win32)" generated="20230614 15:27:59.251" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Formation\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Load Json From File">
+<var>${json_obj}</var>
+<arg>C:\\Users\\Formation\\Desktop\\projetGITRFW\\Mercredi 14-06-23\\data.json</arg>
+<msg timestamp="20230614 15:28:02.312" level="FAIL">No keyword with name 'Load Json From File' found.</msg>
+<status status="FAIL" starttime="20230614 15:28:02.312" endtime="20230614 15:28:02.312"/>
+</kw>
+<kw name="Get Value From Json">
+<var>${json_data1}</var>
+<arg>${json_obj}</arg>
+<arg>$.name</arg>
+<status status="NOT RUN" starttime="20230614 15:28:02.313" endtime="20230614 15:28:02.313"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${json_data1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230614 15:28:02.313" endtime="20230614 15:28:02.313"/>
+</kw>
+<kw name="Get Value From Json">
+<var>${json_data2}</var>
+<arg>${json_obj}</arg>
+<arg>$.translations</arg>
+<status status="NOT RUN" starttime="20230614 15:28:02.314" endtime="20230614 15:28:02.314"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${json_data2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230614 15:28:02.314" endtime="20230614 15:28:02.314"/>
+</kw>
+<kw name="Get Value From Json">
+<var>${json_data3}</var>
+<arg>${json_obj}</arg>
+<arg>$.currencies[1].code</arg>
+<status status="NOT RUN" starttime="20230614 15:28:02.315" endtime="20230614 15:28:02.315"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${json_data3}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230614 15:28:02.315" endtime="20230614 15:28:02.315"/>
+</kw>
+<status status="PASS" starttime="20230614 15:27:59.269" endtime="20230614 15:28:13.311"/>
+</kw>
+<status status="PASS" starttime="20230614 15:27:59.269" endtime="20230614 15:28:13.311"/>
+</test>
+<status status="PASS" starttime="20230614 15:27:59.254" endtime="20230614 15:28:13.312"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
